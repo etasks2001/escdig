@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/balanco/component.css">
+    <link rel="stylesheet" href="css/balanco/balanco.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 class="title">Balanço Patrimonial</h1>
+    <div class="company">
+        <select id="companies" class="component">
+            <option value="1" selected="selected">Franco Suissa Importação Exportação e Representações Ltda</option>
+            <option value="2">Maison Lafite Importação e Comércio Ltda</option>
+            <option value="3">Euro Invest</option>
+            <option value="4">TSD</option>
+        </select>
+    </div>
+    <div class="tabContent">
+        <div class="conteudoPesquisa">
+            <div class="options">
+                <input type="text" placeholder="Ano.." name="search" id="anopesquisa" maxlength="4" class="ano component">
+                <button id="localizar" class="component">Localizar <i class="fa fa-search"></i></button>
+                <button id="editar" class="component">Editar <i class="fa fa-edit"></i></button>
+                <button id="inserir" class="component">Inserir <i class="fa fa-pencil"></i></button>
+                <button id="apagar" class="component">Apagar <i class="fa fa-eraser"></i></button>
+                <button id="up" class="component"><i class="fa fa-arrow-circle-up"></i></button>
+                <button id="down" class="component"><i class="fa fa-arrow-circle-down"></i></button>
+                <button id="gravarordem" class="component">Gravar Ordem <i class="fa fa-sort-numeric-asc"></i></button>
+            </div>
+            <div class="tableWrap">
+                <table class="table">
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <form id="PanelLinhaBalancoModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                Balanço Patrimonial
+            </div>
+            <input type="hidden" name="ano">
+            <input type="hidden" name="codigoempresa">
+            <input type="hidden" name="sk">
+            <input type="hidden" name="nu_ordem" />
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="left">Cód. Aglut.</label>
+                    <input type="text" name="cod_agl" class="input-control cod_agl text-uppercase" maxlength="50" />
+                    <label>Cód. Aglut. Superior</label>
+                    <input type="text" name="cod_agl_sup" class="input-control cod_agl_sup text-uppercase" maxlength="50" />
+                </div>
+                <div class="form-group">
+                    <label class="left">Descrição</label>
+                    <input type="text" name="descr_cod_agl" class="input-control descr_cod_agl text-uppercase" maxlength="150" required />
+                </div>
+                <div class="form-group">
+                    <label class="left">Indicador</label>
+                    <select name="ind_cod_agl" class="input-control ind_cod_agl">
+                        <option value="D">D-Detalhe</option>
+                        <option value="T">T-Totalizador</option>
+                    </select>
+                    <label class="label">Nível</label>
+                    <input type="number" min="0" max="9" name="nivel_agl" class="input-control nivel_agl" />
+                    <label>Grupo do Balanço</label>
+                    <select name="ind_grp_bal" class="input-control ind_grp_bal">
+                        <option value="A">A-Ativo</option>
+                        <option value="P">P-Passivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="left">Valor Inicial</label>
+                    <input class="input-control vl_cta_ini" name="vl_cta_ini" required />
+
+                    <label>Indicador</label>
+                    <select class="input-control ind_dc_cta_ini" name="ind_dc_cta_ini">
+                        <option value="D">D-Devedor</option>
+                        <option value="C">C-Credor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="left">Valor Final</label>
+                    <input class="input-control vl_cta_fin" name="vl_cta_fin" required />
+                    <label>Indicador</label>
+                    <select class="input-control ind_dc_cta_fin" name="ind_dc_cta_fin">
+                        <option value="D">D-Devedor</option>
+                        <option value="C">C-Credor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button class="save botao" type="submit">Salvar</button>
+                    <button class="exit botao">Sair</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </form>
+    <div id="MessageModal" class="modal">
+        <div class="content">
+            <div class="title">
+                <p>Mensagem</p>
+                <span class="close">&times;</span>
+            </div>
+            <div class="box-message">
+                <p class="message"></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://github.com/codermarcos/simple-mask-money/releases/download/v3.0.0/simple-mask-money.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/balanco/balanco.js"></script>
+</body>
+
+</html>

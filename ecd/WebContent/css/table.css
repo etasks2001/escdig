@@ -1,0 +1,71 @@
+/* Set a fixed scrollable wrapper */
+.tableWrap {
+    height: 700px;
+    margin-top: 5px;
+    border: 0.5px solid #03045e;
+    overflow: scroll;
+    display: block;
+}
+
+.title_table {
+    background-color: #00b4d8;
+    text-align: left;
+    caption-side: top;
+    font-family: Inter, Arial, sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 110%;
+    top: 0px;
+}
+
+/* Set header to stick to the top of the container. */
+thead tr th {
+    text-align: center;
+    font-weight: bold;
+    position: sticky;
+    top: 35px;
+}
+
+/* If we use border,
+  we must use table-collapse to avoid
+  a slight movement of the header row */
+table {
+    border-collapse: collapse;
+}
+
+/* Because we must set sticky on th,
+   we have to apply background styles here
+   rather than on thead */
+th {
+    padding: 10px;
+    border: 1.5px solid #ffffff;
+
+    background: #90e0ef;
+    box-shadow: 1.5px 1.5px 0 1.5px #ffffff;
+}
+
+/* Basic Demo styling */
+table {
+    width: 100%;
+    font-size: 13.3333px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table td {
+    padding: 3px;
+    border: 1.5px solid #90e0ef;
+}
+
+tbody tr {
+    border: 1.5px solid #90e0ef;
+}
+
+tbody tr:hover {
+    background: #b2dbbf;
+}
+.rowSelected {
+    background-color: #fee440;
+}
+.rowSelected:hover {
+    background-color: #fee440;
+}

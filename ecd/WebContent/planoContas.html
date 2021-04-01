@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/planocontas/component.css">
+  <link rel="stylesheet" href="css/planocontas/planocontas.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1 class="title">Plano De Contas</h1>
+  <div class="company">
+    <select id="companies" class="component">
+      <option value="1" selected="selected">Franco Suissa Importação Exportação e Representações Ltda</option>
+      <option value="2">Maison Lafite Importação e Comércio Ltda</option>
+      <option value="3">Euro Invest</option>
+      <option value="4">TSD</option>
+    </select>
+  </div>
+  <div class="tabContent">
+    <div class="conteudoPesquisa">
+      <div class="options">
+        <input type="text" placeholder="Ano.." name="search" id="ano" maxlength="4" class="ano component">
+        <button id="localizar" class="component">Localizar <i class="fa fa-search"></i></button>
+        <button id="editar" class="component">Editar <i class="fa fa-edit"></i></button>
+      </div>
+      <div class="tableWrap">
+        <table class="table">
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <form id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        Plano de Contas
+      </div>
+
+
+      <input type="hidden" name="sk">
+      <input type="hidden" name="ano">
+      <input type="hidden" name="codigoempresa">
+      <input type="hidden" name="cod_cta">
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Conta</label>
+          <input type="text" name="conta" class="input-control conta" disabled />
+
+          <label class="right-inline">Tipo de Conta</label>
+          <input name="tipoconta" class="input-control tipoconta" disabled />
+        </div>
+
+        <div class="form-group">
+          <label>Descrição</label>
+          <input type="text" name="descricao" class="input-control" disabled>
+        </div>
+
+        <div class="form-group">
+          <label>Natureza</label>
+          <select name="cod_nat" class="input-control natureza">
+            <option value="01">Contas de ativo</option>
+            <option value="02">Contas de passivo</option>
+            <option value="03">Patrimônio líquido</option>
+            <option value="04">Contas de resultado</option>
+            <option value="05">Contas de compensação</option>
+            <option value="09">Outras</option>
+
+          </select>
+          <label class="label_nivel">Nível</label>
+          <input type="number" min="1" max="9" class="input-control nivel" name="nivel" required>
+        </div>
+
+        <div class="form-group">
+          <label>Conta Superior</label>
+          <input value="" class="input-control conta" maxlength="10" name="cod_cta_sup" />
+        </div>
+
+        <div class="form-group">
+          <label></label>
+          <div class="list-group">
+            <span class="title-list">Conta Referencial</span>
+            <div>
+              <button class="btnIncluirRef">Incluir</button>
+              <button class="btnRemoverRef">Remover</button>
+            </div>
+            <input type="text" class="control-list inputRef">
+            <select class="control-list selectRef" size="10" name="cod_cta_ref">
+            </select>
+          </div>
+
+          <div class="list-group">
+            <span class="title-list">Código de Aglutinação</span>
+            <div>
+              <button class="btnIncluirAgl">Incluir</button>
+              <button class="btnRemoverAgl">Remover</button>
+            </div>
+            <input type="text" class="control-list inputAgl">
+            <select class="control-list selectAgl" size="10" name="cod_agl">
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <button class="save botao">Salvar</button>
+          <button class="exit botao">Sair</button>
+
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </form>
+
+
+
+  <div id="MessageModal" class="modal">
+    <div class="content">
+      <div class="title">
+        <p>Mensagem</p>
+        <span class="close">&times;</span>
+      </div>
+      <div class="box-message">
+        <p class="message"></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="js/functions.js"></script>
+  <script src="js/planocontas/planocontas.js"></script>
+</body>
+
+</html>
