@@ -10,34 +10,34 @@ import com.xsaturncont.util.Util;
 
 public class CreateJ900 {
 
-	private Connection connection;
+    private Connection connection;
 
-	private String codigoEmpresa;
+    private String codigoEmpresa;
 
-	public CreateJ900(Connection connection, String codigoEmpresa) {
-		this.connection = connection;
-		this.codigoEmpresa = codigoEmpresa;
-	}
+    public CreateJ900(Connection connection, String codigoEmpresa) {
+	this.connection = connection;
+	this.codigoEmpresa = codigoEmpresa;
+    }
 
-	public _J900 get() throws SQLException {
+    public _J900 get() throws SQLException {
 
-		PreparedStatement ps = connection.prepareStatement("select nome from empresa where codigo = " + codigoEmpresa);
-		ResultSet rs = ps.executeQuery();
-		rs.next();
+	PreparedStatement ps = connection.prepareStatement("select nome from empresa where codigo = " + codigoEmpresa);
+	ResultSet rs = ps.executeQuery();
+	rs.next();
 
-		_J900 _J900 = new _J900();
+	_J900 _J900 = new _J900();
 
-		_J900.setReg("J900");
-		_J900.setDnrc_encer("TERMO DE ENCERRAMENTO");
-		_J900.setNum_ord(Util.getNumeroDeOrderm(this.codigoEmpresa));
-		_J900.setNat_livro(Util.normalizeString("ESCRITURAÇÃO CONTÁBIL DIGITAL DO LIVRO DIÁRIO GERAL"));
-		_J900.setNome(Util.normalizeString(rs.getString("nome")));
-		_J900.setQtd_lin("100");
-		_J900.setDt_ini_escr("01012019");
-		_J900.setDt_fin_escr("31122019");
-		_J900.set_J930(new CreateJ930(this.connection, codigoEmpresa).get());
-		ps.close();
-		rs.close();
-		return _J900;
-	}
+	_J900.setReg("J900");
+	_J900.setDnrc_encer("TERMO DE ENCERRAMENTO");
+	_J900.setNum_ord(Util.getNumeroDeOrderm(this.codigoEmpresa));
+	_J900.setNat_livro(Util.normalizeString("ESCRITURAÇÃO CONTÁBIL DIGITAL DO LIVRO DIÁRIO GERAL"));
+	_J900.setNome(Util.normalizeString(rs.getString("nome")));
+	_J900.setQtd_lin("100");
+	_J900.setDt_ini_escr("01012020");
+	_J900.setDt_fin_escr("31122020");
+	_J900.set_J930(new CreateJ930(this.connection, codigoEmpresa).get());
+	ps.close();
+	rs.close();
+	return _J900;
+    }
 }

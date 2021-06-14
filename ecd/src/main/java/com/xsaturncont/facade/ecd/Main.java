@@ -11,25 +11,27 @@ import com.xsaturncont.facade.ecd.layout6.FacadeLayout6;
 
 public class Main {
 
-	public static void main(String[] args)
-			throws ClassNotFoundException, SQLException, NoSuchFieldException, SecurityException,
-			IllegalArgumentException, IllegalAccessException, ParseException, IOException, NoSuchAlgorithmException {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, ParseException,
+	    IOException, NoSuchAlgorithmException {
 
-		Connection connection = new Source().getConnection();
-		FacadeLayout6 facadeLayout6;
+	Connection connection = new Source().getConnection();
+	FacadeLayout6 facadeLayout6;
 
-		facadeLayout6 = new FacadeLayout6(connection, "1", "2019");
-		facadeLayout6.build();
+	facadeLayout6 = new FacadeLayout6(connection, "1", "2020");
+	facadeLayout6.build();
 
-		facadeLayout6 = new FacadeLayout6(connection, "2", "2019");
-		facadeLayout6.build();
+	facadeLayout6 = new FacadeLayout6(connection, "2", "2020");
+	facadeLayout6.build();
 
-		facadeLayout6 = new FacadeLayout6(connection, "3", "2019");
-		facadeLayout6.build();
+	facadeLayout6 = new FacadeLayout6(connection, "3", "2020");
+	facadeLayout6.build();
 
-		facadeLayout6 = new FacadeLayout6(connection, "4", "2019");
-		facadeLayout6.build();
+	facadeLayout6 = new FacadeLayout6(connection, "4", "2020");
+	facadeLayout6.build();
 
-		connection.close();
-	}
+	facadeLayout6 = new FacadeLayout6(connection, "5", "2020");
+	facadeLayout6.build();
+
+	connection.close();
+    }
 }
