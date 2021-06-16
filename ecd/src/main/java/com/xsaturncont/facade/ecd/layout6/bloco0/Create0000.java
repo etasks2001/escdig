@@ -45,7 +45,11 @@ public class Create0000 {
 	_0000.setCod_mun("3550308");
 	_0000.setIm(Util.getInscricaoMunicipal(this.codigoEmpresa));
 	_0000.setInd_sit_esp(null);
-	_0000.setInd_sit_ini_per("0");
+	if (codigoEmpresa.equals("5")) {
+	    _0000.setInd_sit_ini_per("1");
+	} else {
+	    _0000.setInd_sit_ini_per("0");
+	}
 	_0000.setInd_nire("1");
 	_0000.setInd_fin_esc("0");
 	_0000.setCod_hash_sub(null);

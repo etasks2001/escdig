@@ -17,17 +17,17 @@ public class Main {
 	Connection connection = new Source().getConnection();
 	FacadeLayout6 facadeLayout6;
 
-//	facadeLayout6 = new FacadeLayout6(connection, "1", "2020");
-//	facadeLayout6.build();
-//
-//	facadeLayout6 = new FacadeLayout6(connection, "2", "2020");
-//	facadeLayout6.build();
-//
-//	facadeLayout6 = new FacadeLayout6(connection, "3", "2020");
-//	facadeLayout6.build();
-//
-//	facadeLayout6 = new FacadeLayout6(connection, "4", "2020");
-//	facadeLayout6.build();
+	facadeLayout6 = new FacadeLayout6(connection, "1", "2020");
+	facadeLayout6.build();
+
+	facadeLayout6 = new FacadeLayout6(connection, "2", "2020");
+	facadeLayout6.build();
+
+	facadeLayout6 = new FacadeLayout6(connection, "3", "2020");
+	facadeLayout6.build();
+
+	facadeLayout6 = new FacadeLayout6(connection, "4", "2020");
+	facadeLayout6.build();
 
 	facadeLayout6 = new FacadeLayout6(connection, "5", "2020");
 	facadeLayout6.build();
