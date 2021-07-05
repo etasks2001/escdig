@@ -36,7 +36,7 @@ public class Create0000 {
 	_0000 _0000 = new _0000();
 	_0000.setReg("0000");
 	_0000.setLecd("LECD");
-	_0000.setDt_ini("01012020");
+	_0000.setDt_ini("02092020");
 	_0000.setDt_fin("31122020");
 	_0000.setNome(Util.normalizeString(rs.getString("nome")));
 	_0000.setCnpj(rs.getString("cnpj"));
