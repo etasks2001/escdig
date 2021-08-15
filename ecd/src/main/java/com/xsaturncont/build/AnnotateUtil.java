@@ -29,6 +29,7 @@ public class AnnotateUtil {
 		for (Field field : fields) {
 			list.param(field.getCampo());
 		}
+		System.out.println("fds");
 	}
 
 	public static void annotateFields(JDefinedClass definedClass, List<Field> fields) {
