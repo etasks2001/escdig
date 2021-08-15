@@ -31,6 +31,8 @@ public class Loop {
 	private static final int CPUs = Runtime.getRuntime().availableProcessors();
 
 	public static void withIndex(int start, int stop, final Each body) {
+		
+		System.out.println("jfkdlçasfdjkslç");
 		System.out.println("Número de CPUS: " + CPUs);
 		int chunksize = (stop - start + CPUs - 1) / CPUs;
 		int loops = (stop - start + chunksize - 1) / chunksize;
